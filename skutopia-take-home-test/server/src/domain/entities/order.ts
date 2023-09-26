@@ -25,6 +25,15 @@ export const orderInputSchema = orderSchema.pick({
   items: true,
 });
 
+export const orderQuoteRequestSchema = orderSchema.pick({
+  id: true,
+  status: true,
+  customer: true,
+  items: true,
+  quotes: true,
+});
+
 export type OrderInput = z.infer<typeof orderInputSchema>;
 export type Order = z.infer<typeof orderSchema>;
 export type OrderStatus = z.infer<typeof orderStatus>;
+export type OrderQuoteRequest = z.infer<typeof orderQuoteRequestSchema>;
