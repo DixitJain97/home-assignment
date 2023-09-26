@@ -1,5 +1,5 @@
 import { deriveGetOrderQuotesOutcome, GetOrderQuotesResult } from './getOrderQuotes.deriver';
-import { Order, Carriers, OrderQuoteRequest, OrderInput } from '../../entities';
+import { Carriers, OrderQuoteRequest } from '../../entities';
 import { expect } from 'chai';
 
 const mockOrderQuoteRequest: OrderQuoteRequest = {
@@ -22,7 +22,7 @@ const mockOrderQuoteResult: GetOrderQuotesResult = {
     order: {
         id: '123',
         customer: 'Sally Bob',
-        status: 'RECEIVED',
+        status: 'QUOTED',
         items: [
           {
             sku: 'SHOE-RED-1',

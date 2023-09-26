@@ -54,6 +54,7 @@ describe('bookCarrier.deriver', () => {
   it('returns SUCCESS when making a valid booking', () => {
     const order: Order = {
       ...mockOrder,
+      status: 'QUOTED',
       quotes: [
         {
           carrier: 'UPS',

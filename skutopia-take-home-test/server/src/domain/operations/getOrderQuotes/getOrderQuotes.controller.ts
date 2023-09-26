@@ -1,5 +1,5 @@
 import { ordersRepo } from '../../../repos/ordersRepo';
-import { CarrierQuoteRequest, Order, Carriers } from '../../entities';
+import { Order, Carriers } from '../../entities';
 import { deriveGetOrderQuotesOutcome, GetOrderQuotesResult } from './getOrderQuotes.deriver';
 
 export const getOrderQuotes = async (

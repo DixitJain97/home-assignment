@@ -37,17 +37,11 @@ export const deriveBookCarrierOutcome = (
       outcome: 'ORDER_NOT_FOUND',
     };
   }
+
   if (order.status === 'BOOKED') {
     return {
       outcome: 'ORDER_ALREADY_BOOKED',
       order,
-    };
-  }
-  if (order.status !== 'QUOTED') {
-    return {
-      outcome: 'INVALID_ORDER_STATUS',
-      expected: 'QUOTED',
-      actual: order.status,
     };
   }
 
@@ -56,6 +50,14 @@ export const deriveBookCarrierOutcome = (
     return {
       outcome: 'NO_MATCHING_QUOTE',
       quotes: order.quotes,
+    };
+  }
+
+  if (order.status !== 'QUOTED') {
+    return {
+      outcome: 'INVALID_ORDER_STATUS',
+      expected: 'QUOTED',
+      actual: order.status,
     };
   }
 

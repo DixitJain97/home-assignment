@@ -118,6 +118,16 @@ describe("A mini SKUTOPIA API", () => {
       ],
     });
   });
+  it("should return INVALID REQUEST BODY when carriers is an empty array", async () => {
+    const result = await apiClient.post(`/orders/${ORDERS[1].id}/quotes`, {
+      carriers: [],
+    });
+    expect(result.status).to.eq(400);
+    expect(result.data).to.deep.eq({
+      error: 'INVALID_REQUEST_BODY',
+      validationError: 'carriers must be a non-empty array',
+    });
+  });
   it("should return ORDER ALREADY BOOKED when requesting a quote for a BOOKED order", async () => {
     const result = await apiClient.post(
       `/orders/${ORDERS[0].id}/quotes`,

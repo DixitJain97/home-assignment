@@ -90,6 +90,7 @@ Generate quotes for an order for the given carriers and returns the quotes. Upda
   outcome: 'SUCCESS';
   order: {
     id: string;
+    // status here should be 'QUOTED'
     status: 'RECEIVED';
     customer: string;
     items: Array<{

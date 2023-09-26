@@ -1,4 +1,4 @@
-import { CarrierCode, Order, OrderQuoteRequest, CarrierQuoteRequest, Carriers } from "../../entities";
+import { Order, OrderQuoteRequest, Carriers } from "../../entities";
 import { generateQuote } from '../../../../../api-tests/util';
 
 type OrderNotFound = {
@@ -46,7 +46,7 @@ export const deriveGetOrderQuotesOutcome = (
         outcome: 'SUCCESS',
         order: {
             ...order,
-            status: 'RECEIVED',
+            status: 'QUOTED',
             quotes: generatedQuotes,
         },
     };
